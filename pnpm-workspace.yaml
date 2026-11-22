@@ -1,0 +1,12 @@
+# Configurações do pnpm (a partir do pnpm 11 elas NÃO ficam mais no package.json).
+
+# Pacotes com módulos nativos que precisam rodar scripts de build na instalação.
+allowBuilds:
+  '@scarf/scarf': set this to true or false
+  bcrypt: true
+  sqlite3: true
+
+# O sequelize depende do uuid <11.1.1 (GHSA-w5hq-g745-h8pq, reportado por `pnpm audit`).
+# Forçamos a versão corrigida; a série 11 ainda é compatível com CommonJS.
+overrides:
+  uuid: "^11.1.1"

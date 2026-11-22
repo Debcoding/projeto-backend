@@ -1,0 +1,54 @@
+{
+  "name": "store-api",
+  "version": "1.0.0",
+  "description": "API REST para gerenciamento de usuários, categorias e produtos (Node.js, Express 5, MySQL, Sequelize, JWT, Jest e Swagger)",
+  "main": "src/server.js",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "security:audit": "pnpm audit --prod",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "db:create": "sequelize-cli db:create",
+    "db:drop": "sequelize-cli db:drop",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:migrate:status": "sequelize-cli db:migrate:status",
+    "db:migrate:undo": "sequelize-cli db:migrate:undo",
+    "db:migrate:undo:all": "sequelize-cli db:migrate:undo:all",
+    "db:seed": "sequelize-cli db:seed:all",
+    "db:seed:undo": "sequelize-cli db:seed:undo:all",
+    "db:reset": "pnpm run db:migrate:undo:all && pnpm run db:migrate && pnpm run db:seed"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "helmet": "^8.0.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.0",
+    "qs": "^6.13.0",
+    "sequelize": "^6.37.3",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.7",
+    "supertest": "^7.0.0"
+  }
+}
